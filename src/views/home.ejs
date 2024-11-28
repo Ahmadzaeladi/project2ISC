@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+  "
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3>Dashboard</h3>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#">Website</a></li>
+        <li><a href="#" class="active">User</a></li>
+        <li><a href="#">Module</a></li>
+        <li><a href="#">Role</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Assign Role</a></li>
+        <li><a href="#">Setting Website</a></li>
+        <li><a href="#">Layout Setting</a></li>
+      </ul>
+    </div>
+
+    <div class="content">
+      <header class="content-header">
+        <h2>Users</h2>
+
+        <div class="profile d-flex">
+          <img src="/assets/img/avatar-icon.png" alt="User Avatar" />
+          <h4 class="m-2"><%= userName %></h4>
+        </div>
+      </header>
+      <main>
+        <div class="module-header">
+          <h3></h3>
+          <a class="btn btn-primary" href="<%= url %>register">Add User</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach(user => { %>
+            <tr>
+              <td><%= user.user_id %></td>
+              <td><%= user.user_name %></td>
+              <td><%= user.user_email %></td>
+              <td>
+                <button
+                  type="button"
+                  class="btn-edit"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal<%= user.user_id %>"
+                >
+                  Edit
+                </button>
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="exampleModal<%= user.user_id %>"
+                  tabindex="-1"
+                  aria-labelledby="exampleModalLabel<%= user.user_id %>"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5
+                          class="modal-title"
+                          id="exampleModalLabel<%= user.user_id %>"
+                        >
+                          Edit User <%= user.user_name %>
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form
+                          action="<%= url %>register/update/<%= user.user_id %>"
+                          method="POST"
+                        >
+                          <div class="form-group">
+                            <label>Nama:</label>
+                            <input
+                              type="text"
+                              name="username"
+                              class="form-control"
+                              placeholder="Masukan Nama"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label>Email:</label>
+                            <input
+                              type="email"
+                              name="email"
+                              class="form-control"
+                              placeholder="Masukan Email"
+                              required
+                            />
+                          </div>
+                          <div class="form-group">
+                            <label>Password:</label>
+                            <input
+                              type="password"
+                              name="pass"
+                              class="form-control"
+                              placeholder="Masukan Password"
+                              required
+                            />
+                          </div>
+                          <button type="submit" class="btn btn-primary m-3">
+                            Submit
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <form
+                  action="<%= url %>register/delete/<%= user.user_id %>"
+                  method="POST"
+                  style="display: inline"
+                >
+                  <button class="btn-delete" type="submit">Delete</button>
+                </form>
+              </td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </main>
+    </div>
+
+    <!-- <script src="dashboard.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

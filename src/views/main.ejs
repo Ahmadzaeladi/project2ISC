@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jasa Antar Barang - Cepat dan Aman</title>
+    <link rel="shortcut icon" href="/assets/ikon.ico" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css" />
+    <!-- bootstrap css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">AntarCepat</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Layanan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#advantages">Keunggulan</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-secondary" href="<%= url %>login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content text-center text-black">
+        <h1>Jasa Antar Barang Cepat dan Aman</h1>
+        <p class="lead">
+          Solusi pengiriman barang yang mudah dan dapat diandalkan untuk
+          kebutuhan Anda.
+        </p>
+        <a href="#contact" class="btn btn-dark btn-lg">Pesan Sekarang</a>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Layanan Kami</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="/assets/img/Pengiriman Instan.webp"
+                class="card-img-top"
+                alt="Pengiriman Instan"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Pengiriman Instan</h5>
+                <p class="card-text">
+                  Layanan pengiriman cepat untuk barang yang mendesak, tersedia
+                  24 jam sehari.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="/assets/img/Pengiriman Terjadwal.webp"
+                class="card-img-top"
+                alt="Pengiriman Terjadwal"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Pengiriman Terjadwal</h5>
+                <p class="card-text">
+                  Atur waktu pengiriman sesuai dengan kebutuhan Anda. Pilihan
+                  fleksibel dan mudah diatur.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img
+                src="/assets/img/Pengiriman Antar Kota.webp"
+                class="card-img-top"
+                alt="Pengiriman Antar Kota"
+              />
+              <div class="card-body text-center">
+                <h5 class="card-title">Pengiriman Antar Kota</h5>
+                <p class="card-text">
+                  Pengiriman barang antar kota dengan jaminan keamanan dan
+                  kecepatan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Advantages Section -->
+    <section id="advantages" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Mengapa Memilih Kami?</h2>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <img
+              src="/assets/img/Pengiriman Tepat Waktu.webp"
+              class="img-fluid mb-3"
+              alt="Pengiriman Tepat Waktu"
+            />
+            <h5>Pengiriman Tepat Waktu</h5>
+            <p>Jaminan pengiriman sesuai jadwal yang telah ditentukan.</p>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="/assets/img/Pengiriman Aman.webp"
+              class="img-fluid mb-3"
+              alt="Jaminan Keamanan"
+            />
+            <h5>Jaminan Keamanan</h5>
+            <p>Barang Anda dijamin aman sampai tujuan.</p>
+          </div>
+          <div class="col-md-4">
+            <img
+              src="/assets/img/Harga Terjangkau.webp"
+              class="img-fluid mb-3"
+              alt="Harga Terjangkau"
+            />
+            <h5>Harga Terjangkau</h5>
+            <p>Layanan terbaik dengan harga kompetitif.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Masukkan email Anda"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Masukkan password Anda"
+                />
+              </div>
+              <button type="submit" class="btn btn-secondary w-100">
+                Login
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <p class="text-center">
+              Belum punya akun? <a href="#">Daftar Sekarang</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      <div class="container">
+        <p>&copy; 2024 AntarCepat. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
